@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Resume Button</title>
+</head>
+<body>
+
+    <h1>My Resume</h1>
+
+    <button id="downloadButton">Download Resume</button>
+
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function () {
+            // Replace "path/to/your/resume.pdf" with the actual path or URL to your resume file
+            var resumePath = 'path/to/your/resume.pdf';
+
+            // Create a temporary link element
+            var link = document.createElement('a');
+            link.href = resumePath;
+            link.download = 'Kapil_Chauhan_Resume.pdf'; // Set the default file name
+
+            // Append the link to the document
+            document.body.appendChild(link);
+
+            // Trigger a click on the link to initiate the download
+            link.click();
+
+            // Remove the link from the document
+            document.body.removeChild(link);
+        });
+    </script>
+
+</body>
+</html>
